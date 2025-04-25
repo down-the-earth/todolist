@@ -55,14 +55,19 @@ class TodoListController extends Controller
     }
 
     public function update(Request $request,$id){
+        $validate  = $request->validate([
+            'todo' => 'required',
+            'description'=> 'required'
+        ]);
+        
         $task =Task::find($id);
+        
         if($task){
-            $task->task = $request->input('todo');
-            $task->description = $request->input('description');
-            // $task->completed = $request->input('completed');
-            $task->save();
+            $task->updateTask($validate);
+        
             return redirect()->route('index')->with('success', 'Todo updated successfully!');
         }
+        return redirect()->back()->with('error','Task not found');
     }
     
 }

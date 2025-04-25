@@ -22,15 +22,12 @@ class Task extends Model
         
     // }
 
-    // public function update($id,$data){
-    //     $task =Task::find($id);
-    //     if($task){
-    //         $task->task = $data['todo'];
-    //         $task->description = $data['description'];
-    //         $task->completed = $data['completed'];
-    //         $task->save();
-    //     }
-    //     return $task;
-    // }
+    public function updateTask($data){
+        $this->task = $data['todo'];
+        $this->description = $data['description'];
+        $this->save();
+
+        return $this;
+    }
    
 }
