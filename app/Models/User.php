@@ -45,4 +45,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function addUser($data){
+        $this->name = $data['name'];
+        $this->email = $data['email'];
+        $this->password = bcrypt($data['password']);
+        $this->remember_token = $data['remember_token'];
+        $this->created_at = now();
+        $this->updated_at = now();
+        $this->email_verified_at = now();
+        
+        $this->save();
+        return $this;
+    }
 }

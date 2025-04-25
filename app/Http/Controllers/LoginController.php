@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
+use App\Http\Requests\Register;
 class LoginController extends Controller
 {
     //
@@ -14,5 +17,17 @@ class LoginController extends Controller
 
     public function register(){
         return view('auth/register');
+    }
+
+    public function register_user(Register $request){
+        $validate =$request->validate([
+            'name'=>'required|string|max:255',
+            'email'=>'required|email|max:255|unique:users',
+            'password'=>'required|min:8|confirmed',
+            'remember_token'=>'required'
+        ]);
+        $user = new User();
+        $user->addUser($validate);
+        return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
 }

@@ -20,9 +20,9 @@
             </div>
             @endif
 
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register_user') }}">
                 @csrf
-
+                <input type="hidden" name="remember_token" value="{{ csrf_token() }}">
                 <div class="mb-3">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" required>
