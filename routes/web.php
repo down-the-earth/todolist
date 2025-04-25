@@ -16,5 +16,7 @@ Route::post('update/{id}',[TodoListController::class,'update'])->name('update');
 });
 
 Route::get('login',[LoginController::class,'index'])->name('login');
+Route::post('login',[LoginController::class,'login_user'])->name('login');
 Route::get('register',[LoginController::class,'register'])->name('register');
 Route::post('register_user',[LoginController::class,'register_user'])->name('register_user');
+Route::post('login_user',[LoginController::class,'login_user'])->name('login_user');

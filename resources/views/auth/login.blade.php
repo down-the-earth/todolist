@@ -14,7 +14,7 @@
             <div class="alert alert-danger">{{ $errors->first() }}</div>
             @endif
 
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login_user') }}">
                 @csrf
 
                 <div class="mb-3">

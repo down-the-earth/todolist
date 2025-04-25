@@ -30,4 +30,19 @@ class LoginController extends Controller
         $user->addUser($validate);
         return redirect()->route('login')->with('success', 'Registration successful! Please login.');
     }
+
+    public function login_user(Request $request){
+        $validate = $request->validate([
+            'email'=>'required|email|max:255',
+            'password'=>'required|min:8'
+        ]);
+
+        $user = new User();
+        $user ->login($validate);
+        if ($user){
+            return redirect()->route('index')->with('success', 'Login successful!');
+        }
+       return redirect()->route('login')->with('error', 'Invalid credentials!');
+    }
+     
 }

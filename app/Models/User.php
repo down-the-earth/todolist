@@ -58,4 +58,11 @@ class User extends Authenticatable
         $this->save();
         return $this;
     }
+
+    public function login($data){
+        $user = User::where('email',$data['email'])->first();
+        if($user && password_verify($data['password'],$user->password)){
+            return $user;
+        }
+    }
 }
