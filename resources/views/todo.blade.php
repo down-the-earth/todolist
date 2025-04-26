@@ -36,7 +36,19 @@
         <form action="{{route('add')}}" method="post">
             @csrf
             <div class="container">
-                <h1>Todo List</h1>
+                <div class="row">
+                    <div class="text-left col-8 mt-4">
+                        <h1>Todo List</h1>
+                        <h4>Laravel 10 CRUD Application</h4>
+                    </div>
+                    <div class="text-right col-4 mt-4">
+                        <h4>Welcome {{ session('user_name') }}</h4>
+
+                        <a href="" class="btn btn-danger mt-4">Logout</a>
+                    </div>
+                </div>
+
+
                 <div class="mb-3">
                     <label for="todo" class="form-label">Todo</label>
                     <input type="text" class="form-control mb-10" id="todo" name="todo" required>

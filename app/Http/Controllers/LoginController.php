@@ -37,9 +37,11 @@ class LoginController extends Controller
             'password'=>'required|min:8'
         ]);
 
-        $user = new User();
-        $user ->login($validate);
+        // $user = new User();
+        // $user ->login($validate);
+        $user = (new User())->login($validate);
         if ($user){
+             session(['user_id' => $user->id, 'user_name' => $user->name]);
             return redirect()->route('index')->with('success', 'Login successful!');
         }
        return redirect()->route('login')->with('error', 'Invalid credentials!');
