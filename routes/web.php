@@ -17,7 +17,7 @@ Route::post('add',[TodoListController::class,'add'])->name('add');
 Route::get('delete/{id}',[TodoListController::class,'delete'])->name('delete');
 Route::get('edit/{id}',[TodoListController::class,'edit'])->name('edit');
 Route::post('update/{id}',[TodoListController::class,'update'])->name('update');
-
+Route::get('logout',[LoginController::class,'logout'])->name('logout');
 });
 
 Route::get('login',[LoginController::class,'index'])->name('login');

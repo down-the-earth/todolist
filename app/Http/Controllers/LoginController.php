@@ -46,5 +46,11 @@ class LoginController extends Controller
         }
        return redirect()->route('login')->with('error', 'Invalid credentials!');
     }
+
+    public function logout(Request $request){
+         // Clear all session data
+    session()->flush();
+        return redirect()->route('login')->with('success', 'Logout successful!');
+    }
      
 }
