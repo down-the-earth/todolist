@@ -5,10 +5,10 @@ use App\Http\Controllers\TodoListController;
 use App\Http\Controllers\LoginController;
 use App\Http\Middleware\CheckUserSession;
 use App\Http\Controllers\AdminController;
-Route::get('/', function () {
-    return view('auth/login');
-});
-
+// Route::get('/', function () {
+//     return view('auth/login');
+// });
+Route::get('/',[LoginController::class,'index'])->name('login');
 
 Route::prefix('todolist')
 ->middleware([CheckUserSession::class])

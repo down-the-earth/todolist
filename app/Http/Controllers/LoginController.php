@@ -41,8 +41,19 @@ class LoginController extends Controller
         // $user ->login($validate);
         $user = (new User())->login($validate);
         if ($user){
-             session(['user_id' => $user->id, 'user_name' => $user->name]);
-            return redirect()->route('index')->with('success', 'Login successful!');
+            $role = $user->role;
+             session(['user_id' => $user->id, 'user_name' => $user->name,'role' =>$role ]);
+                // Check the user's role and redirect accordingly
+                 
+             if($role==='user'){
+                 return redirect()->route('index')->with('success', 'Login successful!');
+             }elseif($role==='admin'){
+                 return redirect()->route('admin')->with('success', 'Login successful!');
+             }else {
+            // Optional: unknown role fallback
+            return redirect()->route('login')->with('error', 'Unknown user role.');
+        }
+           
         }
        return redirect()->route('login')->with('error', 'Invalid credentials!');
     }

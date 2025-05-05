@@ -50,6 +50,7 @@
                     </div>
                     <div class="text-right col-4 mt-4">
                         <h4>Welcome {{ session('user_name') }}</h4>
+                        <h3>Role: {{ session('role') }}</h3>
 
                         <a href="{{ route('logout') }}" class="btn btn-danger mt-4">Logout</a>
                     </div>

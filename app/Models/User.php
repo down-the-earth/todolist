@@ -60,9 +60,10 @@ class User extends Authenticatable
     }
 
     public function login($data){
-        $user = User::where('email',$data['email'])->first();
+        $user = self::where('email',$data['email'])->first();
         if($user && password_verify($data['password'],$user->password)){
             return $user;
         }
+        return null;
     }
 }
