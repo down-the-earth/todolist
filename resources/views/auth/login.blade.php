@@ -7,6 +7,11 @@
     </head>
 
     <body class="bg-light">
+        @if(session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+
+        </div>
+         @endif
         <div class="container mt-5">
             <h2 class="mb-4">Login</h2>
 

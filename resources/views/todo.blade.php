@@ -62,6 +62,21 @@
                     <input type="text" class="form-control mb-10" id="todo" name="todo" required>
                     <textarea class="form-control" name="description" placeholder="Description"></textarea>
                 </div>
+                <div class="mb-3">
+                    <label for="language" class="form-label">Language</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="PHP" id="php" name="language[]">
+                        <label class="form-check-label" for="php">PHP</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="JavaScript" id="javascript" name="language[]">
+                        <label class="form-check-label" for="javascript">JavaScript</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Python" id="python" name="language[]">
+                        <label class="form-check-label" for="python">Python</label>
+                    </div>
+                
                 <button type="submit" class="btn btn-primary">Add Todo</button>
             </div>
 
