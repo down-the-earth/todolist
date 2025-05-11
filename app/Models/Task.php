@@ -11,7 +11,8 @@ class Task extends Model
        'task',
        'description',
        'completed',
-         'user_id'
+         'user_id',
+         'language'
     ];
 
     // public function getlist()
@@ -24,6 +25,7 @@ class Task extends Model
     public function updateTask($data){
         $this->task = $data['todo'];
         $this->description = $data['description'];
+        $this->language = json_encode($data['language']);
         // $this->user_id = $data['user_id'];
         $this->save();
 

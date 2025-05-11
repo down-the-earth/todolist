@@ -22,6 +22,24 @@
                     <textarea class="form-control" name="description"
                         placeholder="Description">{{$task->description}}</textarea>
                 </div>
+                 <div class="mb-3">
+                    <label for="language" class="form-label">Language</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="PHP" id="php" name="language[]" 
+                            @if(in_array('PHP', json_decode($task->language))) checked @endif >
+                        <label class="form-check-label" for="php">PHP</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="JavaScript" id="javascript" name="language[]"
+                        @if(in_array('JavaScript', json_decode($task->language))) checked @endif >
+                        <label class="form-check-label" for="javascript">JavaScript</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="Python" id="python" name="language[]"
+                        @if(in_array('Python', json_decode($task->language))) checked @endif >
+                        <label class="form-check-label" for="python">Python</label>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary">Upate </button>
             </div>
         </form>

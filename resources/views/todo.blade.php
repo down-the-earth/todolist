@@ -76,6 +76,7 @@
                         <input class="form-check-input" type="checkbox" value="Python" id="python" name="language[]">
                         <label class="form-check-label" for="python">Python</label>
                     </div>
+                </div>
                 
                 <button type="submit" class="btn btn-primary">Add Todo</button>
             </div>

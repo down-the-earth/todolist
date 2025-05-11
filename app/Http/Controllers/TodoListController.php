@@ -29,7 +29,8 @@ class TodoListController extends Controller
             'task' => $todo,
             'description' => $request->input('description'),
             'completed' => false,
-            'user_id' => $user_id
+            'user_id' => $user_id,
+            'language' => json_encode($request->input('language'))
         ]);
         // Here you would typically save the todo to a database or perform some action
         // For demonstration, we'll just return the todo item
@@ -56,7 +57,8 @@ class TodoListController extends Controller
     public function update(Request $request,$id){
         $validate  = $request->validate([
             'todo' => 'required',
-            'description'=> 'required'
+            'description'=> 'required',
+            'language' => 'required'
         ]);
         
         $task =Task::find($id);
