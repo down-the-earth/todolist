@@ -24,6 +24,7 @@ Route::get('logout',[LoginController::class,'logout'])->name('logout');
 Route::prefix('admin')->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('admin');
     Route::get('logout',[LoginController::class,'logout'])->name('logout');
+    Route::get('users',[AdminController::class,'users'])->name('admin.users');
 
 });
 Route::get('login',[LoginController::class,'index'])->name('login');

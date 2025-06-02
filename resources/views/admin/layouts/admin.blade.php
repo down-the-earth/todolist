@@ -35,10 +35,10 @@
                 <nav class="col-md-2 d-none d-md-block bg-light sidebar py-3">
                     <div class="position-sticky">
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-                            <li class="nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
+                            <li class="nav-item"><a class="nav-link" href="dashboard">Dashboard</a></li>
+                            <li class="nav-item"><a class="nav-link" href="users">Users</a></li>
+                            <li class="nav-item"><a class="nav-link" href="settings">Settings</a></li>
+                            <li class="nav-item"><a class="nav-link text-danger" href="logout">Logout</a></li>
                         </ul>
                     </div>
                 </nav>
